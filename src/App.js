@@ -1,10 +1,10 @@
-import "./App.css";
+import ProductsContext from "./context/ProductsContext";
 
 function App() {
   return (
-    <div className="App">
-
-    </div>
+    <ProductsContext className="App">
+      
+    </ProductsContext>
   );
 }
 
