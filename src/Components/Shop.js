@@ -1,7 +1,9 @@
 import React, { useContext } from 'react';
 
+//Context
 import { productsContext } from '../context/ProductsContext';
 
+//Components
 import Product from "./shared/Product"
 
 const Shop = () => {
