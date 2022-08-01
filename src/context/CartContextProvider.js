@@ -16,8 +16,8 @@ const cartReducer = (state, action) => {
       ) {
         const newProductSelect = { ...action.payload, quantity: 1 };
         state.selectedProducts.push(newProductSelect);
-        return { ...state, selectedProducts: [...state.selectedProducts] };
       }
+      return { ...state, selectedProducts: [...state.selectedProducts] };
 
     case "REMOVE_ITEM":
       const newSelectedProduct = state.selectedProducts.filter(
@@ -36,7 +36,7 @@ const cartReducer = (state, action) => {
       const indexD = state.selectedProducts.findIndex(
         (item) => item.id === action.payload.id
       );
-      state.selectedProducts[indexI].quantity--;
+      state.selectedProducts[indexD].quantity--;
       return { ...state };
 
     case "CHECKOUT":

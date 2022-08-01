@@ -4,4 +4,18 @@ const shorten = (title) => {
   return shorted;
 };
 
-export { shorten };
+const isInCart = (state, id) => {
+  return !!state.selectedProducts.find(item => item.id === id);
+}
+
+const quantityCount = (state, id) => {
+  const index = state.selectedProducts.findIndex(item => item.id === id);
+
+  if (index === -1) {
+    return false;
+  } else {
+    return state.selectedProducts[index].quantity
+  }
+}
+
+export { shorten, isInCart, quantityCount };
