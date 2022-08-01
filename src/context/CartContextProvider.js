@@ -9,11 +9,16 @@ const initialValues = {
   checkout: false,
 };
 
-const cartSum = (state) => {
-  const cartCount = state.selectedProducts.reduce((total, product) => total + product.quantity, 0)
-  const totalPrice = state.selectedProducts.reduce((totalP, product) => totalP + product.quantity * product.price, 0).toFixed(2)
-  return {totalPrice, cartCount}
-}
+const cartSum = (selectedProducts) => {
+  const cartCount = selectedProducts.reduce(
+    (total, product) => total + product.quantity,
+    0
+  );
+  const totalPrice = selectedProducts
+    .reduce((totalP, product) => totalP + product.quantity * product.price, 0)
+    .toFixed(2);
+  return { totalPrice, cartCount };
+};
 
 const cartReducer = (state, action) => {
   switch (action.type) {
@@ -24,27 +29,36 @@ const cartReducer = (state, action) => {
         const newProductSelect = { ...action.payload, quantity: 1 };
         state.selectedProducts.push(newProductSelect);
       }
-      return { ...state, selectedProducts: [...state.selectedProducts], ...cartSum(state) };
+      return {
+        ...state,
+        selectedProducts: [...state.selectedProducts],
+        checkout: false,
+        ...cartSum(state.selectedProducts),
+      };
 
     case "REMOVE_ITEM":
-      const newSelectedProduct = state.selectedProducts.filter(
+      const newSelectedProducts = state.selectedProducts.filter(
         (item) => item.id !== action.payload.id
       );
-      return { ...state, selectedProducts: [...newSelectedProduct], ...cartSum(state) };
+      return {
+        ...state,
+        selectedProducts: [...newSelectedProducts],
+        ...cartSum(newSelectedProducts),
+      };
 
     case "INCREASE":
       const indexI = state.selectedProducts.findIndex(
         (item) => item.id === action.payload.id
       );
       state.selectedProducts[indexI].quantity++;
-      return { ...state, ...cartSum(state) };
+      return { ...state, ...cartSum(state.selectedProducts) };
 
     case "DECREASE":
       const indexD = state.selectedProducts.findIndex(
         (item) => item.id === action.payload.id
       );
       state.selectedProducts[indexD].quantity--;
-      return { ...state, ...cartSum(state) };
+      return { ...state, ...cartSum(state.selectedProducts) };
 
     case "CHECKOUT":
       return {
@@ -54,7 +68,7 @@ const cartReducer = (state, action) => {
         checkout: true,
       };
 
-    case "CLEAR_CART":
+    case "CLEAR":
       return {
         selectedProducts: [],
         totalPrice: 0,
