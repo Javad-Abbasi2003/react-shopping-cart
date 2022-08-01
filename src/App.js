@@ -5,17 +5,20 @@ import Shop from "./Components/Shop";
 import Details from "./Components/Details";
 
 //Context
-import ProductsContext from "./context/ProductsContext";
+import ProductsContextProvider from "./context/ProductsContext";
+import CartContextProvider from "./context/CartContextProvider";
 
 function App() {
   return (
-    <ProductsContext>
-      <Routes>
-        <Route path="/products" element={<Shop />} />
-        <Route path="/products/:id" element={<Details />} />
-        <Route path="/" element={<Navigate to="/products" />} />
-      </Routes>
-    </ProductsContext>
+    <ProductsContextProvider>
+      <CartContextProvider>
+        <Routes>
+          <Route path="/products" element={<Shop />} />
+          <Route path="/products/:id" element={<Details />} />
+          <Route path="/" element={<Navigate to="/products" />} />
+        </Routes>
+      </CartContextProvider>
+    </ProductsContextProvider>
   );
 }
 

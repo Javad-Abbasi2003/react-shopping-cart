@@ -3,7 +3,7 @@ import { fetchProducts } from "../services/api"
 
 export const productsContext = createContext()
 
-const ProductsContext = ({children}) => {
+const ProductsContextProvider = ({children}) => {
 
   const [products, setProducts] = useState([]);
 
@@ -22,4 +22,4 @@ const ProductsContext = ({children}) => {
   );
 };
 
-export default ProductsContext;
+export default ProductsContextProvider;
