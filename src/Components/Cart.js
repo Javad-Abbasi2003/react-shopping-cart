@@ -7,41 +7,43 @@ import { cartContext } from "../context/CartContextProvider";
 //Components
 import CartItem from "./shared/CartItem";
 
+//Style
+import Styles from "./Cart.module.css"
+
 const Cart = () => {
   const { cartState, dispatch } = useContext(cartContext);
-  console.log(cartState)
+
   return (
-    <div>
-      <div>
+    <div className={Styles.container}>
+      <div className={Styles.cartItemsContainer}>
         {cartState.selectedProducts.map((product) => (
           <CartItem key={product.id} data={product} />
         ))}
       </div>
       {cartState.cartCount > 0 && (
-        <div>
-          <div>
-            <p><span>Total items:</span> {cartState.cartCount}</p>
-            <p><span>Total payment:</span> {cartState.totalPrice}</p>
+        <div className={Styles.totalsContainer}>
+          <div className={Styles.totals}>
+            <p className={Styles.totalItems}>Total items: <span className={Styles.totalItemsSpan}>{cartState.cartCount}</span></p>
+            <p className={Styles.totalPayment}>Total payment: <span className={Styles.totalPaymentSpan}>{cartState.totalPrice}</span></p>
           </div>
-          <div>
-            <button onClick={() => dispatch({type:"CLEAR"})}>Clear</button>
-            <button onClick={() => dispatch({type:"CHECKOUT"})}>Checkout</button>
+          <div className={Styles.buttons}>
+            <button onClick={() => dispatch({type:"CLEAR"})} className={Styles.clearBtn}>Clear</button>
+            <button onClick={() => dispatch({type:"CHECKOUT"})} className={Styles.checkoutBtn}>Checkout</button>
           </div>
         </div>
       )}
       { cartState.cartCount === 0 && cartState.checkout && 
-        <div>
-          <h2>Checked out successfully</h2>
-          <Link to="/products">Buy more</Link>
+        <div className={Styles.checkedoutContainer}>
+          <h2 className={Styles.checkedoutheader}>Checked out successfully</h2>
+          <Link to="/products" className={Styles.checkedoutLink}>Buy more</Link>
         </div>
       }
       {cartState.cartCount === 0 && !cartState.checkout &&
-        <div>
-          <h2>Want to buy?</h2>
-          <Link to="/products">Go To Shop</Link>
+        <div className={Styles.clearCartContainer}>
+          <h2 className={Styles.clearCartheader}>Want to buy?</h2>
+          <Link to="/products" className={Styles.clearCartLink}>Go To Shop</Link>
         </div>
       }
-
     </div>
   );
 };

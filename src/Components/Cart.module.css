@@ -1,0 +1,134 @@
+.container {
+  margin: 130px 60px;
+  padding: 30px 70px 10px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #f5f5f5;
+  border: 3px solid #1a73e8;
+  align-items: flex-start;
+  border-radius: 15px;
+}
+
+/* .cartItemsContainer {
+} */
+
+.totalsContainer {
+  background-color: #fff;
+  /* margin: 20px; */
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 250px;
+  width: 230px;
+  border-radius: 15px;
+  border: 2px solid #1a73e8;
+}
+
+/* .totals {
+} */
+
+.totalItems {
+  font-size: 18px;
+  font-weight: 500;
+}
+.totalItemsSpan {
+  display: inline-block;
+  text-align: center;
+  padding: 1px 5px;
+  min-width: 15px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: #1c74e9cc;
+}
+.totalPayment {
+  font-size: 18px;
+  font-weight: 500;
+}
+.totalPaymentSpan {
+  display: inline-block;
+  text-align: center;
+  padding: 1px 5px;
+  min-width: 50px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: #1c74e9cc;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  transition: all 0.2s ease-out;
+}
+.clearBtn {
+  background-color: #00000000;
+  border: none;
+  color: #1a73e8;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 35px;
+  font-family: "Segoe UI", "Roboto", "Oxygen";
+  border-radius: 5px;
+  transition: color 0.2s ease-out;
+  transition: border-bottom 0.05s linear;
+}
+.clearBtn:hover {
+  cursor: pointer;
+  color: #186ad4;
+  border-bottom: 2px solid #1a73e8;
+}
+.checkoutBtn {
+  background-color: #1a73e8;
+  font-size: 17px;
+  color: #fff;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Segoe UI", "Roboto", "Oxygen";
+  font-weight: 500;
+  transition: all 0.2s ease-out;
+}
+.checkoutBtn:hover {
+  background-color: #186ad4;
+}
+
+.checkedoutContainer, .clearCartContainer {
+  padding: 30px;
+  margin-bottom: 20px;
+  background-color: #fff;
+  width: 350px;
+  height: 250px;
+  border-radius: 15px;
+  border: 2px solid #1a73e8;
+}
+.checkedoutheader {
+  background-color: #008000;
+  color: #fff;
+  padding: 5px 5px;
+  font-size: 25px;
+  text-align: center;
+  border-radius: 5px;
+
+}
+.checkedoutLink, .clearCartLink {
+  text-decoration: none;
+  padding: 2px 6px;
+  border-radius: 5px;
+  color: #1a73e8;
+  font-weight: 600;
+  font-size: 18px;
+  transition: all 0.2s ease-out;
+}
+.checkedoutLink:hover, .clearCartLink:hover {
+  background-color: #1a73e815;
+}
+
+.clearCartheader {
+  margin-bottom: 50px;
+}
+

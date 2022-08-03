@@ -1,0 +1,158 @@
+.container {
+  width: 300px;
+  height: 550px;
+  margin: 10px 15px 40px;
+  padding: 10px;
+  background-color: #ececec;
+  border: 1px solid #8c8c8c;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  transition: all 0.4s ease-out;
+}
+.container:hover {
+  box-shadow: 0 10px 12px rgba(0, 0, 0, 0.3);
+}
+
+.productImage {
+  max-width: 80%;
+  max-height: 350px;
+  margin: 15px;
+  border-radius: 15px 15px 0 0;
+  transition: all 0.4s ease-out;
+}
+.productImage:hover {
+  transform: scale(140%) translateY(20px);
+  border-radius: 0;
+  border: 1px solid #8c8c8c;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+}
+.productImageLink {
+  text-align: center;
+}
+
+.nonImageContainer {
+  width: 200px;
+}
+
+.title {
+  color: #696969;
+  height: 1.5rem;
+  overflow: hidden;
+}
+
+.priceContainer {
+  margin-top: 8px;
+  display: inline-block;
+}
+.price {
+  padding: 1px 5px;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 5px;
+  background-color: #1c74e9cc;
+}
+
+.bottomContainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+}
+
+.detailsLink {
+  padding: 7px;
+  text-decoration: none;
+  color: #1a73e8;
+  font-weight: 500;
+  border-radius: 7px;
+  transition: all 0.2s ease-out;
+}
+.detailsLink:hover {
+  background-color: #1a73e81f;
+  color: #186ad4;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  min-width: 85px;
+  max-width: 93px;
+  align-items: center;
+  transition: all 0.2s ease-out;
+}
+
+.addToCartBtn {
+  background-color: #1a73e8;
+  color: #fff;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Segoe UI", "Roboto", "Oxygen";
+  font-weight: 600;
+  transition: all 0.2s ease-out;
+}
+.addToCartBtn:hover {
+  background-color: #186ad4;
+}
+
+.increaseBtn {
+  width: 25px;
+  background-color: #1a73e8;
+  line-height: 1px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+}
+.increaseBtn:hover {
+  background-color: #186ad4;
+}
+.increaseBtn img {
+  width: 13px;
+}
+
+.quantity {
+  display: inline-block;
+  background-color: #f1f1f1;
+  color: #1a73e8;
+  border: 2px solid #1a73e8;
+  line-height: 26px;
+  font-weight: 500;
+  padding: 0px 2px 0px;
+  margin: 0px 5px;
+  min-width: 15px;
+  border-radius: 7px;
+  text-align: center;
+  overflow: hidden;
+}
+
+.decreaseBtn {
+  width: 25px;
+  background-color: #1a73e8;
+  line-height: 1px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+}
+.decreaseBtn:hover {
+  background-color: #186ad4;
+}
+.decreaseBtn img {
+  width: 13px;
+}
+
+.removeItemBtn {
+  width: 25px;
+  background-color: #1a73e8;
+  line-height: 1px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.2s ease-out;
+}
+.removeItemBtn img {
+  width: 15px;
+}
